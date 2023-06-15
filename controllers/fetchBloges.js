@@ -1,7 +1,7 @@
 const Blog = require('../models/Blog')
 const fetchBlogs = async (req, res) => {
     try {
-        const blogs = await Blog.find({});
+        const blogs = await Blog.find({}).sort({date:"desc"});
         res.status(200).send({ blogs })
 
     } catch (error) {
