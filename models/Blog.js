@@ -6,7 +6,7 @@ const blogSchema = Schema({
     ref: 'admin',
   },
   title: { type: String, required: true },
-  images:
+  images: 
     [
       {
         public_id: {

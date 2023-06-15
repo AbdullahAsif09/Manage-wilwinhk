@@ -46,6 +46,8 @@ const {
 const { getPrivecy, privecyPolicy } = require("../controllers/privecyPolicy");
 const { getShipping, ShippingDelivery } = require("../controllers/Shipping");
 const { getRefund, refund } = require("../controllers/Refund");
+const { addLogo } = require("../controllers/addLogo");
+const { getLogo } = require("../controllers/getLogo");
 
 router.post("/signup", adminSignupValidation, adminSignup);
 router.get("/verify", adminVerifyerifyMail);
@@ -102,4 +104,8 @@ router.get("/getRefund", getRefund);
 router.get("/getPrivecyPolicy", getPrivecy);
 router.put("/privecyPolicy", privecyPolicy);
 
+// Logo
+router.post("/addLogo", uploadImages, addLogo);
+router.get("/getLogo", getLogo);
+// router.get()
 module.exports = router;
