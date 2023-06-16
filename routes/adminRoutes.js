@@ -48,6 +48,10 @@ const { getShipping, ShippingDelivery } = require("../controllers/Shipping");
 const { getRefund, refund } = require("../controllers/Refund");
 const { addLogo } = require("../controllers/addLogo");
 const { getLogo } = require("../controllers/getLogo");
+const { addAddressOne } = require("../controllers/addAddressOne");
+const { getAddressOne } = require("../controllers/getAddressOne");
+const { addAddressTwo } = require("../controllers/addAddressTwo");
+const { getAddressTwo } = require("../controllers/getAddressTwo");
 
 router.post("/signup", adminSignupValidation, adminSignup);
 router.get("/verify", adminVerifyerifyMail);
@@ -107,5 +111,14 @@ router.put("/privecyPolicy", privecyPolicy);
 // Logo
 router.post("/addLogo", uploadImages, addLogo);
 router.get("/getLogo", getLogo);
+
+// AddressOne
+router.post("/addAddressOne", addAddressOne);
+router.get("/getAddressOne", getAddressOne);
+
+// AddressTwo
+router.post("/addAddressTwo", addAddressTwo);
+router.get("/getAddressTwo", getAddressTwo);
+
 // router.get()
 module.exports = router;
