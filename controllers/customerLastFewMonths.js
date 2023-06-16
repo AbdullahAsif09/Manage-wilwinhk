@@ -1,4 +1,5 @@
-const { Customer } = require('./stripeWebHook')
+// const { Customer } = require('./stripeWebHook')
+const  Customer  = require('../models/User')
 const moment = require('moment');
 
 
@@ -9,7 +10,7 @@ const customerLastFewMonths = async (req, res) => {
 
         // Retrieve customers created in the last 3 months
         const customers = await Customer.find({
-            created_at: { $gte: threeMonthsAgo },
+            // created_at: { $gte: threeMonthsAgo },
         });
 
         res.json(customers);
