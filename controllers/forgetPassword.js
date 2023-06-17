@@ -21,10 +21,10 @@ const forgetPassword = async (req, res) => {
 
         }
         else {
-            res.status(200).send({ success: false, msg: "Email does not exists..." })
+            res.status(400).send({ success: false, msg: "Email not found..." })
         }
     } catch (error) {
-        //res.status(400).send({ success: false, msg: error.message });
+        res.status(400).send({ success: false, msg: error.message });
 
     }
 }
