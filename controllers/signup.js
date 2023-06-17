@@ -48,13 +48,11 @@ const signup = async (req, res) => {
         },
       };
       const authToken = JWT.sign(data, secKey);
-      sendVerificationEmail(req.body.name, req.body.email, user_data.id);
-      res
-        .status(200)
-        .send({
-          success: true,
-          message: "Successfully signed up, please verify your mail.",
-        });
+      sendVerificationEmail(req.body.name, req.body.email, authToken);
+      res.status(200).send({
+        success: true,
+        message: "Successfully signed up, please verify your mail.",
+      });
     }
   } catch (error) {
     //res.status(500).send({ error: error.message })
