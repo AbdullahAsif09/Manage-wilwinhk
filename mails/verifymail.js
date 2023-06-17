@@ -18,9 +18,8 @@ const verifyMail = async (req, res) => {
     user.is_verified = 1;
     await user.save();
     res.status(200).send({ message: "Email verified successfully..." });
-
-    console.log(verify);
   } catch (error) {
+    console.log("error=", error.message);
     res.status(400).send({ error: error.message });
   }
 };
