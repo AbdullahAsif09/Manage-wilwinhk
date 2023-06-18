@@ -16,6 +16,11 @@ const seassionsByCountry = async (req, res) => {
           count: 1,
         },
       },
+      {
+        $sort: {
+          count: -1,
+        },
+      },
     ]);
     res.status(201).json(countries);
   } catch (error) {
