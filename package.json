@@ -37,6 +37,7 @@
     "xlsx-populate": "^1.21.0"
   },
   "devDependencies": {
+    "@types/express": "^4.17.17",
     "nodemon": "^2.0.22"
   }
 }
