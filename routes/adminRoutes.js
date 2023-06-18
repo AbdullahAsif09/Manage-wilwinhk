@@ -52,6 +52,7 @@ const { addAddressOne } = require("../controllers/addAddressOne");
 const { getAddressOne } = require("../controllers/getAddressOne");
 const { addAddressTwo } = require("../controllers/addAddressTwo");
 const { getAddressTwo } = require("../controllers/getAddressTwo");
+const { getCustomerGraph } = require("../controllers/GraphCustomer");
 
 router.post("/signup", adminSignupValidation, adminSignup);
 router.get("/verify", adminVerifyerifyMail);
@@ -120,5 +121,7 @@ router.get("/getAddressOne", getAddressOne);
 router.post("/addAddressTwo", addAddressTwo);
 router.get("/getAddressTwo", getAddressTwo);
 
+// Graphs
+router.get("/graphCustomer", getCustomerGraph);
 // router.get()
 module.exports = router;
