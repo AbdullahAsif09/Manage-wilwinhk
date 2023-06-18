@@ -53,6 +53,7 @@ const { getAddressOne } = require("../controllers/getAddressOne");
 const { addAddressTwo } = require("../controllers/addAddressTwo");
 const { getAddressTwo } = require("../controllers/getAddressTwo");
 const { getCustomerGraph } = require("../controllers/GraphCustomer");
+const { seassionsByCountry } = require("../controllers/seassionsByCountry");
 
 router.post("/signup", adminSignupValidation, adminSignup);
 router.get("/verify", adminVerifyerifyMail);
@@ -120,6 +121,8 @@ router.get("/getAddressOne", getAddressOne);
 // AddressTwo
 router.post("/addAddressTwo", addAddressTwo);
 router.get("/getAddressTwo", getAddressTwo);
+// Seassions
+router.get("/countries", seassionsByCountry);
 
 // Graphs
 router.get("/graphCustomer", getCustomerGraph);
