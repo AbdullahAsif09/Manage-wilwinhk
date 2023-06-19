@@ -106,13 +106,25 @@ exports.blogValidation = [
 exports.passwordValidation = [
   check(
     "password",
-    "Password must be atleast 8 charcters long including lower case upper case, special characters  and numbers"
+    "Password must be at least 8 characters long, including lowercase, uppercase, special characters, and numbers"
   ).isStrongPassword({
-    min: 8,
-    allow_numbers: true,
-    allow_lowercase: true,
-    allow_uppercase: true,
+    minLength: 8,
+    minLowercase: 1,
+    minUppercase: 1,
+    minNumbers: 1,
+    minSymbols: 1,
   }),
+  check(
+    "confirmPassword",
+    "Confirm Password field must have the same value as the Password field"
+  )
+    .exists()
+    .custom((value, { req }) => {
+      if (value !== req.body.password) {
+        throw new Error("Password confirmation does not match password");
+      }
+      return true;
+    }),
 ];
 
 exports.rfqValidations = [
