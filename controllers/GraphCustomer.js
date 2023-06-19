@@ -16,7 +16,7 @@ const getCustomerGraph = async (req, res) => {
           count: { $sum: 1 },
         },
       },
-      { $sort: { year: -1, month: -1 } },
+      { $sort: { "_id.year": -1, "_id.month": 1 } },
     ]);
     // const getUsers = await Users.find({})
     res.status(200).json({ message: "Sales of this month", getUsers });

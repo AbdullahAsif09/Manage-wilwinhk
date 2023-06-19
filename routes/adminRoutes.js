@@ -54,6 +54,7 @@ const { addAddressTwo } = require("../controllers/addAddressTwo");
 const { getAddressTwo } = require("../controllers/getAddressTwo");
 const { getCustomerGraph } = require("../controllers/GraphCustomer");
 const { seassionsByCountry } = require("../controllers/seassionsByCountry");
+const { getOrderGraph } = require("../controllers/getOrderGraph");
 
 router.post("/signup", adminSignupValidation, adminSignup);
 router.get("/verify", adminVerifyerifyMail);
@@ -126,5 +127,6 @@ router.get("/countries", seassionsByCountry);
 
 // Graphs
 router.get("/graphCustomer", getCustomerGraph);
+router.get("/graphOrder", getOrderGraph);
 // router.get()
 module.exports = router;
