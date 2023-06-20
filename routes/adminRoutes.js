@@ -57,7 +57,7 @@ const { seassionsByCountry } = require("../controllers/seassionsByCountry");
 const { getOrderGraph } = require("../controllers/getOrderGraph");
 
 router.post("/signup", adminSignupValidation, adminSignup);
-router.get("/verify/:token", adminVerifyerifyMail);
+router.get("/verify", adminVerifyerifyMail);
 router.post("/login", loginValidation, adminLogin);
 router.get("/fetchData", fetchUser, adminDetails);
 router.get("/getCustomers", fetchUser, fetchCustomers);

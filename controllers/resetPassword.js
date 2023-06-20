@@ -4,7 +4,6 @@ const { validationResult } = require("express-validator");
 
 const resetPassword = async (req, res) => {
   const { token } = req.query;
-  console.log(req.query);
   const { password, confirmPassword } = req.body;
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
