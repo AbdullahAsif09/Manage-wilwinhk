@@ -38,7 +38,7 @@ const signup = async (req, res) => {
     });
     const userdata = await User.findOne({ email: req.body.email });
     if (userdata) {
-      res.status(200).send({ success: false, message: "Email already exists" });
+      res.status(400).send({ error: "User already exists" });
     } else {
       const user_data = await user.save();
       console.log(user_data);
