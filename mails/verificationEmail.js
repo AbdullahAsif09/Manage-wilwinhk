@@ -19,7 +19,7 @@ const sendVerificationEmail = async (name, email, authToken) => {
       from: process.env.EMAIL,
       to: email,
       subject: "Verify your Email",
-      html: `<p>Hi ${name}, Hope you are doing well. Please follow this link to <a href = ${url}/verify?token=${authToken}"> verify your email </a></p>`,
+      html: `<p>Hi ${name}, Hope you are doing well. Please follow this link to <a href = ${url}/verify?token=${authToken}> verify your email </a></p>`,
     };
 
     transporter.sendMail(mailOtions, (err, info) => {
