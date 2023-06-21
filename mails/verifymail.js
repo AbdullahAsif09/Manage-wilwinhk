@@ -4,7 +4,6 @@ const JWT = require("jsonwebtoken");
 const verifyMail = async (req, res) => {
   try {
     const authToken = req.query.token; // incripted token
-    // console.log(authToken);
     const decode = JWT.verify(authToken, process.env.JWT_KEY); // decrypt token
     const id = decode.user.id;
     const user = await User.findById(id);
@@ -12,7 +11,7 @@ const verifyMail = async (req, res) => {
       res.status(404).send({ error: "User not found" });
       return;
     }
-    if (user.is_verified) { 
+    if (user.is_verified) {
       res.status(400).send({ message: "Email already verified..." });
       return;
     }
