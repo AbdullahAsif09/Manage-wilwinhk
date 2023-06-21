@@ -2,7 +2,7 @@ const Product = require('../models/Product');
 
 const adminFetchProducts = async (req, res) => {
     try {
-        const product = await Product.find({}).limit(15);
+        const product = await Product.find({});
 
         if (!product) {
             return res.status(404).send({ message: "Products not found" });
