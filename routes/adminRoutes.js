@@ -83,7 +83,7 @@ router.get("/checkPaymentHistory", fetchUser, checkPaymentHistory);
 //BLOGS ROUTES
 router.post("/addBlog", uploadImages, blogValidation, fetchUser, addBlog);
 router.get("/fetchBlogs", fetchBlogs);
-router.get("/fetchSingleBlog/:id", fetchUser, fetchSingleBlog);
+router.get("/fetchSingleBlog/:id",  fetchSingleBlog);
 router.patch("/updateBlog/:id", fetchUser, updateBlog);
 router.delete("/deleteBlog/:id", fetchUser, deleteBlog);
 

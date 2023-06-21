@@ -107,15 +107,15 @@ router.post(
 );
 router.post("/addToFvrt/:id", fetchUser, addToFavourite);
 router.delete("/removeFromFvrt/:id", fetchUser, deleteFromFavorite);
-router.get("/fetchSingleProduct/:id", fetchUser, fetchSingleProduct);
-router.get("/fetchAllProducts", fetchUser, fetchProducts);
+router.get("/fetchSingleProduct/:id",  fetchSingleProduct);
+router.get("/fetchAllProducts",  fetchProducts);
 router.patch("/updateProduct/:id", fetchUser, updateProduct);
 router.delete("/deleteProduct/:id", fetchUser, deleteProduct);
 router.get("/searchProduct", fetchUser, searchProduct);
-router.get("/popularSearchedProducts", fetchUser, popularSearhedProducts);
-router.get("/latestproducts", fetchUser, latestProducts);
-router.get("/getRecomendedProducts", fetchUser, recomendedProducts);
-router.post("/productRecomendation", fetchUser, productRecomendations);
+router.get("/popularSearchedProducts", popularSearhedProducts);
+router.get("/latestproducts", latestProducts);
+router.get("/getRecomendedProducts", recomendedProducts);
+router.post("/productRecomendation", productRecomendations);
 
 //ORDERS ROUTES
 router.post("/addOrder/:id", fetchUser, addOrder);
