@@ -16,11 +16,11 @@ const adminMailVerification = async (name, email, userId) => {
         });
 
         const mailOtions = {
-            from: process.env.EMAIL,
-            to: email,
-            subject: 'Verify your Email',
-            html: `<p>Hi ${name}, Hope you are doing well. Please follow this link to <a href = "http://15.206.128.120:8000/admin/verify?id=${userId}"> verify your email </a></p>`
-        }
+          from: process.env.EMAIL,
+          to: email,
+          subject: "Verify your Email",
+          html: `<p>Hi ${name}, Hope you are doing well. Please follow this link to <a href = "http://3.7.46.114:8000/admin/verify?id=${userId}"> verify your email </a></p>`,
+        };
 
         transporter.sendMail(mailOtions, (err, info) => {
             if (err) {
