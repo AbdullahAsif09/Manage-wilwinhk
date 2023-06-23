@@ -20,12 +20,12 @@ const userShema = new Schema({
     },
     jobTitle: {
         type: String,
-        required: true
+        // required: true
     },
 
     phoneNumber: {
         type: String,
-        required: true
+        // required: true
     },
     companyName: {
         type: String,
