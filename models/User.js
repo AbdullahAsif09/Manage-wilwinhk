@@ -23,10 +23,10 @@ const userShema = new Schema({
         // required: true
     },
 
-    phoneNumber: {
-        type: String,
-        // required: true
-    },
+    // phoneNumber: {
+    //     type: String,
+    //     // required: true
+    // },
     companyName: {
         type: String,
         required: true

@@ -110,10 +110,10 @@ exports.passwordValidation = [
     "Password must be at least 8 characters long, including lowercase, uppercase, special characters, and numbers"
   ).isStrongPassword({
     minLength: 8,
-    minLowercase: 1,
-    minUppercase: 1,
+    minLowercase: 0,
+    minUppercase: 0,
     minNumbers: 1,
-    minSymbols: 1,
+    minSymbols: 0,
   }),
   check(
     "confirmPassword",

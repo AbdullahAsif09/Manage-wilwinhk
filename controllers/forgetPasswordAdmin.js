@@ -1,14 +1,14 @@
-const User = require("../models/User");
+const Admin = require("../models/Admin");
 const JWT = require("jsonwebtoken");
-const resetPasswordMail = require("../mails/resetPasswordMail");
+const resetPasswordMail = require("../mails/resetPasswordMailAdmin");
 
-const forgetPassword = async (req, res) => {
-  try { 
+const forgetPasswordAdmin = async (req, res) => {
+  try {
     const { email } = req.body;
-    const user = await User.findOne({ email });
+    const user = await Admin.findOne({ email });
     console.log(user);
     if (!user) {
-      return res.status(404).json({ message: "User not found" });
+      return res.status(404).json({ message: "Admin not found" });
     }
     if (!user.is_verified) {
       return res.status(400).json({ message: "Email not verified" });
@@ -16,7 +16,7 @@ const forgetPassword = async (req, res) => {
     const token = JWT.sign({ user: user }, process.env.JWT_KEY, {
       expiresIn: "20m",
     });
-    const link = `${process.env.REACT_APP_BASE_URL_ADMIN}/resetpassword?token=${token}`;
+    const link = `${process.env.REACT_APP_BASE_URL}/resetpassword?token=${token}`;
     await resetPasswordMail(user, link);
     res.status(200).json({ message: "Reset password link sent to your email" });
   } catch (error) {
@@ -25,4 +25,4 @@ const forgetPassword = async (req, res) => {
   }
 };
 
-module.exports = { forgetPassword };
+module.exports = { forgetPasswordAdmin };

@@ -6,6 +6,7 @@ const {
   loginValidation,
   blogValidation,
   validationsForAddingProducts,
+  passwordValidation,
 } = require("../middleware/validation");
 const uploadImages = require("../middleware/uploadFile");
 
@@ -55,10 +56,14 @@ const { getAddressTwo } = require("../controllers/getAddressTwo");
 const { getCustomerGraph } = require("../controllers/GraphCustomer");
 const { seassionsByCountry } = require("../controllers/seassionsByCountry");
 const { getOrderGraph } = require("../controllers/getOrderGraph");
+const { forgetPasswordAdmin } = require("../controllers/forgetPasswordAdmin");
+const { resetPasswordAdmin } = require("../controllers/resetPasswprdAdmin");
 
 router.post("/signup", adminSignupValidation, adminSignup);
 router.get("/verify/:id", adminVerifyerifyMail);
 router.post("/login", loginValidation, adminLogin);
+router.post("/forgotPassword", forgetPasswordAdmin);
+router.post("/resetPassword", passwordValidation, resetPasswordAdmin);
 router.get("/fetchData", fetchUser, adminDetails);
 router.get("/getCustomers", fetchUser, fetchCustomers);
 router.post(
@@ -83,7 +88,7 @@ router.get("/checkPaymentHistory", fetchUser, checkPaymentHistory);
 //BLOGS ROUTES
 router.post("/addBlog", uploadImages, blogValidation, fetchUser, addBlog);
 router.get("/fetchBlogs", fetchBlogs);
-router.get("/fetchSingleBlog/:id",  fetchSingleBlog);
+router.get("/fetchSingleBlog/:id", fetchSingleBlog);
 router.patch("/updateBlog/:id", fetchUser, updateBlog);
 router.delete("/deleteBlog/:id", fetchUser, deleteBlog);
 
