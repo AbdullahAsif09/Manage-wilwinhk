@@ -8,26 +8,10 @@ const offersSchema = new Schema({
 
 const productSchema = new Schema(
   {
-    name: { type: String},
+    name: { type: String },
     title: { type: String, required: true },
-    category: [
-      {
-        id: {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: "Category",
-        },
-        name: String,
-      },
-    ],
-    subCategory: [
-      {
-        id: {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: "Subcategory",
-        },
-        name: String,
-      },
-    ],
+    category: { type: String },
+    subCategory: { type: String },
     images: [
       {
         public_id: {

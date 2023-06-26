@@ -1,5 +1,5 @@
 const User = require("../models/User");
-require("dotenv").config();
+require("dotenv").config(); 
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 const JWT = require("jsonwebtoken");

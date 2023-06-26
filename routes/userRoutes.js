@@ -83,6 +83,7 @@ const {
   getAllSubscriptions,
   deleteSubscription,
 } = require("../controllers/subscription");
+const { getCategories } = require("../controllers/getCategories");
 
 //USER`S ROUTES
 router.post("/signup", signupValidation, signup);
@@ -91,6 +92,7 @@ router.get("/getUserDetails", fetchUser, getUserDetails);
 router.get("/verify", verifyMail);
 router.post("/forgetPassword", forgetPassword);
 router.post("/resetPassword", passwordValidation, resetPassword);
+router.get("/getCategories", getCategories);
 router.post("/updatePassword", fetchUser, updatePassword);
 router.patch("/updateUserInfo/:_id", fetchUser, updateUserInfo);
 router.get("/getUserData/:id", fetchUser, getUserData);

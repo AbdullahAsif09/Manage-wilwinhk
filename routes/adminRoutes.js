@@ -61,7 +61,7 @@ const { resetPasswordAdmin } = require("../controllers/resetPasswprdAdmin");
 
 router.post("/signup", adminSignupValidation, adminSignup);
 router.get("/verify/:id", adminVerifyerifyMail);
-router.post("/login", loginValidation, adminLogin);
+router.post("/login",  adminLogin);
 router.post("/forgotPassword", forgetPasswordAdmin);
 router.post("/resetPassword", passwordValidation, resetPasswordAdmin);
 router.get("/fetchData", fetchUser, adminDetails);

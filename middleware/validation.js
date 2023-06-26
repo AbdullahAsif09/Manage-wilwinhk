@@ -39,8 +39,6 @@ exports.loginValidation = [
   check("password", "Password is required").isStrongPassword({
     min: 8,
     allow_numbers: true,
-    allow_lowercase: true,
-    allow_uppercase: true,
   }),
 ];
 
