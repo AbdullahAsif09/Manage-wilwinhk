@@ -4,6 +4,7 @@ const getCategories = async (req, res) => {
     const getcategories = await Products.aggregate([
       { $group: { _id: "$category" } },
       { $project: { _id: 0, category: "$_id" } },
+      { $sort: { category: 1 } },
     ]);
     // const getUsers = await Users.find({})
     res.status(201).json({ message: "Sales of this month", getcategories });

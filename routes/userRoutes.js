@@ -84,15 +84,17 @@ const {
   deleteSubscription,
 } = require("../controllers/subscription");
 const { getCategories } = require("../controllers/getCategories");
+const { getSubCategories } = require("../controllers/getSubcategory");
 
 //USER`S ROUTES
 router.post("/signup", signupValidation, signup);
-router.post("/login", loginValidation, login);
+router.post("/login", login);
 router.get("/getUserDetails", fetchUser, getUserDetails);
 router.get("/verify", verifyMail);
 router.post("/forgetPassword", forgetPassword);
 router.post("/resetPassword", passwordValidation, resetPassword);
 router.get("/getCategories", getCategories);
+router.get("/getSubCategories/:category", getSubCategories);
 router.post("/updatePassword", fetchUser, updatePassword);
 router.patch("/updateUserInfo/:_id", fetchUser, updateUserInfo);
 router.get("/getUserData/:id", fetchUser, getUserData);
@@ -103,7 +105,7 @@ router.delete("/deleteAccount/:id", fetchUser, deleteAccount);
 router.post(
   "/addProduct",
   validationsForAddingProducts,
-  uploadImages,
+  uploadImages, 
   fetchUser,
   addProduct
 );
