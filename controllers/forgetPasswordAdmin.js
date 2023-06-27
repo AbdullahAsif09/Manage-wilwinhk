@@ -16,7 +16,8 @@ const forgetPasswordAdmin = async (req, res) => {
     const token = JWT.sign({ user: user }, process.env.JWT_KEY, {
       expiresIn: "20m",
     });
-    const link = `${process.env.REACT_APP_BASE_URL}/resetpassword?token=${token}`;
+    const link = `${process.env.REACT_APP_BASE_URL_ADMIN}/resetpassword?token=${token}`;
+    // const link = `${process.env.REACT_APP_BASE_URL}/resetpassword?token=${token}`;
     await resetPasswordMail(user, link);
     res.status(200).json({ message: "Reset password link sent to your email" });
   } catch (error) {
